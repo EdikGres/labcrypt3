@@ -51,35 +51,35 @@ int main() {
 
     bool res_freq = freq_test(sequence, period);
     std::cout << std::endl;
-    std::cout << "Period: " << period << std::endl << std::endl;
+    std::cout << "Период: " << period << std::endl << std::endl;
 
     std::vector<int> subseq_0(0);
     std::vector<int> subseq_1(0);
 
     double Hi = series_test(sequence, subseq_0, subseq_1, period);
 
-    std::cout << "Max '0' sequence: " << subseq_0.size() << std::endl;
-    std::cout << "Max '1' sequence: " << subseq_1.size() << std::endl << std::endl;
+    std::cout << "Максимальная последовательность '0' : " << subseq_0.size() << std::endl;
+    std::cout << "Максимальная последовательность '1' : " << subseq_1.size() << std::endl << std::endl;
 
     for (int i = 0; i < subseq_0.size(); i++) {
-        std::cout << "Amount of '0";
+        std::cout << "Количество '0";
         for (int j = 0; j < i; j++)
             std::cout << "0";
-        std::cout << "' subsequence: " << subseq_0[i] << std::endl;
+        std::cout << "' : " << subseq_0[i] << std::endl;
     }
     std::cout << std::endl;
 
     for (int i = 0; i < subseq_1.size(); i++) {
-        std::cout << "The amount of '1";
+        std::cout << "Количество '1";
         for (int j = 0; j < i; j++)
             std::cout << "1";
-        std::cout << "' subsequence: " << subseq_1[i] << std::endl;
+        std::cout << "' : " << subseq_1[i] << std::endl;
     }
     std::cout << std::endl;
 
     Hi = series_test(sequence, subseq_0, subseq_1, 1000);
 
-    std::cout << "Series test result, Hi^2: " << Hi << std::endl;
+    std::cout << "Тест серий, Hi^2: " << Hi << std::endl;
 
     return 0;
 }
@@ -108,8 +108,8 @@ bool freq_test(std::vector<int> seq, unsigned int n) {
     int f = 0;
     for (unsigned int i = 0; i < n - 1; i++)
         f += seq[i];
-    std::cout << "Amount of '1': " << f << std::endl;
-    std::cout << "Amount of '0': " << n - f << std::endl;
+    std::cout << "Количество '1': " << f << std::endl;
+    std::cout << "Количество '0': " << n - f << std::endl;
     f = f - (n / 2);
     double ff = f * 2 / sqrt(n);
 
